@@ -3,7 +3,7 @@ import MainFrame from './Components/MainFrame';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <MainFrame/>
     </div>
   );

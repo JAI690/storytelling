@@ -3,14 +3,28 @@
     height: 40rem;
     margin: auto;
     margin-top: 5%;
-    background-color: black;
-    border: 'solid 3px white';
+    background-color: rgba(200, 200, 250, .5);
+    border: solid 10px white;
     border-radius: 5%;
+
 }
 
 .clip {
     width: 80%;
     height: 100%;
     margin: auto;
-    border-radius: 10%;
+    border-radius: 1%;
+}
+
+.clip:hover {
+    animation: perrito 0s forwards alternate;
+}
+
+@keyframes perrito {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(-1);
+    }
 }
