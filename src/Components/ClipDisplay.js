@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Styles/MainFrame.css'
+import '../Styles/ClipDisplay.css'
 
 const ClipDisplay = props => {
     const [variable,setVariable] = useState();

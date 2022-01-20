@@ -1,0 +1,23 @@
+.clip {
+    width: 80%;
+    height: 89%;
+    margin: auto;
+    margin-top: 1%;
+    margin-top: 1%;
+    border-radius: 15%;
+    padding: 2%;
+    border: solid 2px black;
+}
+
+.clip:hover {
+    animation: perrito 0s forwards alternate;
+}
+
+@keyframes perrito {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(-1);
+    }
+}
