@@ -9,7 +9,9 @@ const MainFrame = props => {
     return (
         <div className='Principal'>
             <ClipDisplay src='clips/tiburon.gif' />
-            <Message />
+            <div className='message'>
+                <Message />
+            </div>
         </div>
     );
      
