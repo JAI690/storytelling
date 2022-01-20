@@ -10,7 +10,7 @@
 }
 
 .clip:hover {
-    animation: perrito 0s forwards alternate;
+    /* animation: perrito 0s forwards alternate; */
     cursor: pointer;
 }
 
