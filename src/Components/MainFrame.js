@@ -16,24 +16,29 @@ const MainFrame = props => {
         setClip('waiting');
     }
 
-    const selectHistory = function(decision){
+    const selectHistory = (decision)=>{
         transition();
-        setInterval(() => {
-            setHistory(decision);
-            changeClip();
+        if(decision==='start'){setHistory('')}
+        setTimeout(() => {
+            changeClip(decision);
         }, 1800);
 
     };
 
-    const changeClip = function(){
-        switch (history) {
+    const changeClip = function(decision){
+
+        switch (decision) {
             case 'start':
                 setClip('tiburon');
-                break
+                break;
             case 'A':
                 setClip('jogging');
-                break
+                break;
+            case 'B':
+                setClip('sitting to work');
+                break;
             default:
+                setClip('perrito')
                 break;
         }
     };
@@ -42,7 +47,7 @@ const MainFrame = props => {
         <div className='Principal' onClick={() => {changeState()}} >
             <ClipDisplay src= {'clips/'+clip+'.gif'}  />
             <div className='message' style={messageState ?  {display: ''} : {display: 'none'}}>
-                <Message onClick={()=>{selectHistory()}}/>
+                <Message state={history} onClickHandler={selectHistory}/>
             </div>
         </div>
     );

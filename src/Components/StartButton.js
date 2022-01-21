@@ -5,7 +5,7 @@ const StartButton = props => {
     
     return (
         <div>
-            <button className='startButton' onClick={() => props.onClick()}>START</button>
+            <button className='startButton' onClick={() => props.onClickHandler('start')}>START</button>
         </div>
     );
      
