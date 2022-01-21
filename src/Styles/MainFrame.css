@@ -15,11 +15,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:gray;
+    background-color:rgba(68, 66, 66, 0.75);
     width: 83%;
     height: 95%;
     border-radius: 15%;
-    opacity: 85%;
-    color: white;
-
 }

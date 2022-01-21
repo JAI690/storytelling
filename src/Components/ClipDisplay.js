@@ -5,7 +5,7 @@ const ClipDisplay = props => {
     const [variable,setVariable] = useState();
     
     return (
-        <img className='clip' src={props.src} alt="Clip not Found"/> 
+        <img className='clip' src={props.src} alt="Clip not Found" /> 
     );
      
 };

@@ -9,8 +9,8 @@ const MainFrame = props => {
         setMessageState(!messageState);
     }
     return (
-        <div className='Principal' onClick={() => {changeState()}}>
-            <ClipDisplay src='clips/perrito.gif' />
+        <div className='Principal' onClick={() => {changeState()}} >
+            <ClipDisplay src='clips/perrito.gif'  />
             <div className='message' style={messageState ?  {display: ''} : {display: 'none'}}>
                 <Message />
             </div>
