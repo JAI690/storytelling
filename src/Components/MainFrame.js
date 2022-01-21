@@ -18,6 +18,7 @@ const MainFrame = props => {
 
     const selectHistory = (decision)=>{
         transition();
+        setHistory(decision);
         if(decision==='start'){setHistory('')}
         setTimeout(() => {
             changeClip(decision);
@@ -31,12 +32,58 @@ const MainFrame = props => {
             case 'start':
                 setClip('tiburon');
                 break;
+
             case 'A':
-                setClip('jogging');
+                setClip('spin-chair');
                 break;
+
+                case 'A1':
+                    setClip('eating');
+                    break;
+
+                    case 'A11':
+                        setClip('excercesing');
+                        break;
+                    case 'A12':
+                        setClip('exhausted');
+                        break;
+
+                case 'A2':
+                    setClip('go-sleep');
+                    break;
+
+                    case 'A21':
+                        setClip('sitting to work');
+                        break;
+                    case 'A22':
+                        setClip('thinking');
+                        break;
+
             case 'B':
-                setClip('sitting to work');
+                setClip('working-remote');
                 break;
+
+                case 'B1':
+                    setClip('typing');
+                    break;
+                    
+                    case 'B11':
+                        setClip('wakingup');
+                        break;
+                    case 'B12':
+                        setClip('wakingup2');
+                        break;
+
+                case 'B2':
+                    setClip('work-leaving');
+                    break;    
+                    
+                    case 'B21':
+                        setClip('work-onfire');
+                        break;   
+                    case 'B22':
+                        setClip('tiburon');
+                        break;   
             default:
                 setClip('perrito')
                 break;
@@ -45,9 +92,13 @@ const MainFrame = props => {
 
     return (
         <div className='Principal' onClick={() => {changeState()}} >
-            <ClipDisplay src= {'clips/'+clip+'.gif'}  />
+
+            <ClipDisplay state={history} src= {'clips/'+clip+'.gif'}  />
+
             <div className='message' style={messageState ?  {display: ''} : {display: 'none'}}>
+
                 <Message state={history} onClickHandler={selectHistory}/>
+
             </div>
         </div>
     );
