@@ -5,14 +5,14 @@ import ClipDisplay from './ClipDisplay';
 
 const MainFrame = props => {
     const [messageState,setMessageState] = useState(false);
-    const [clip,setClip] = useState('perrito');
+    const [clip,setClip] = useState('intro');
     const [history, setHistory] = useState('start')
     const [loading, setLoading] = useState(false);
 
     const restart = function(){
         setMessageState(false);
         setHistory('start')
-        setClip('perrito');
+        setClip('intro');
     }
 
     const changeState = function(){
@@ -31,7 +31,7 @@ const MainFrame = props => {
         setTimeout(() => {
             changeClip(decision);
             setLoading(false);
-        }, 1800);
+        }, 1000);
 
     };
 

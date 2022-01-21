@@ -4,6 +4,7 @@ import StartButton from './StartButton';
 import DecisionButton from './DecisionButton';
 
 const messages = {
+    'start': 'In this game you will decide on Homer\'s life, click the buttons to make a decision and see your result. Ready?',
     '': 'Homer is a middle-class working man, father of 3 and a loved husband. This night he went to sleep without knowing his next day will be on YOUR HANDS, help him to have a good day (or not).',
     'A': 'You decided for homer to work today, and this morning he received a call from his boss letting him choose between working from home or at the office. What should he do?',
     'A1': 'Hey we are working remote, that is really good for you and really bad for your weight control. Now, what should he do?',
@@ -22,6 +23,7 @@ const messages = {
 }
 
 const titles = {
+    'start':'Instructions',
     '': 'Homer on your hands',
     'A': 'Working Homer',
     'A1': 'Working Remote',
