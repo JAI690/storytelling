@@ -22,7 +22,7 @@ const Message = props => {
             <StartButton onClickHandler={props.onClickHandler}/>:
             props.state.length<3?
                 <DecisionButton decisionA={props.state+'1'} decisionB={props.state+'2'} onClickHandler={props.onClickHandler}/>:
-                <StartButton />
+                <div></div>
         }
         </div>
     );
