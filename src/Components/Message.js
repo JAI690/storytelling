@@ -33,12 +33,12 @@ const Message = props => {
             </p>
 
         {props.state==='start'?
-            <StartButton onClickHandler={props.onClickHandler}/>:
+            <StartButton message='START' onClickHandler={props.onClickHandler}/>:
             props.state===''?
                 <DecisionButton decisionA='A' decisionB='B' onClickHandler={props.onClickHandler}/>:
                 props.state.length<3?
                     <DecisionButton decisionA={props.state+'1'} decisionB={props.state+'2'} onClickHandler={props.onClickHandler}/>:
-                    <div></div>
+                    <StartButton message='RESTART' onClickHandler={props.reset}/>
         }
         </div>
     );

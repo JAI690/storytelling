@@ -8,6 +8,12 @@ const MainFrame = props => {
     const [clip,setClip] = useState('perrito');
     const [history, setHistory] = useState('start')
 
+    const restart = function(){
+        setMessageState(false);
+        setHistory('start')
+        setClip('perrito');
+    }
+
     const changeState = function(){
         setMessageState(!messageState);
     };
@@ -97,7 +103,7 @@ const MainFrame = props => {
 
             <div className='message' style={messageState ?  {display: ''} : {display: 'none'}}>
 
-                <Message state={history} onClickHandler={selectHistory}/>
+                <Message state={history} onClickHandler={selectHistory} reset={restart}/>
 
             </div>
         </div>
