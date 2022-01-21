@@ -2,20 +2,20 @@ import React from 'react';
 import '../Styles/DecisionButton.css'
 
 const decisions = {
-    'A': 'This is state A',
-    'A1': 'This is state A1',
-    'A11': 'This is state A11',
-    'A12': 'This is state A12',
-    'A2': 'This is state A2',
-    'A21': 'This is state A21',
-    'A22': 'This is state A22',
-    'B': 'This is state B',
-    'B1': 'This is state B1',
-    'B11': 'This is state B11',
-    'B12': 'This is state B12',
-    'B2': 'This is state B2',
-    'B21': 'This is state B21',
-    'B22': 'This is state B22',
+    'A': 'Work',
+    'A1': 'Work remote',
+    'A11': 'Start Working',
+    'A12': 'Simulate Working',
+    'A2': 'Work on-site',
+    'A21': 'Sleep at work',
+    'A22': 'Ask for UTO',
+    'B': 'Day off',
+    'B1': 'Excercising',
+    'B11': 'Take pills *',
+    'B12': 'Go home',
+    'B2': 'Eating',
+    'B21': 'Am I eating too much?',
+    'B22': 'Don\'t care...',
 }
 
 

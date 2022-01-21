@@ -7,6 +7,7 @@ const MainFrame = props => {
     const [messageState,setMessageState] = useState(false);
     const [clip,setClip] = useState('perrito');
     const [history, setHistory] = useState('start')
+    const [loading, setLoading] = useState(false);
 
     const restart = function(){
         setMessageState(false);
@@ -15,7 +16,7 @@ const MainFrame = props => {
     }
 
     const changeState = function(){
-        setMessageState(!messageState);
+        if(!loading)setMessageState(!messageState);
     };
 
     const transition = function(){
@@ -25,9 +26,11 @@ const MainFrame = props => {
     const selectHistory = (decision)=>{
         transition();
         setHistory(decision);
+        setLoading(true)
         if(decision==='start'){setHistory('')}
         setTimeout(() => {
             changeClip(decision);
+            setLoading(false);
         }, 1800);
 
     };
@@ -36,56 +39,56 @@ const MainFrame = props => {
 
         switch (decision) {
             case 'start':
-                setClip('tiburon');
+                setClip('go-sleep');
                 break;
 
             case 'A':
-                setClip('spin-chair');
+                setClip('wakingup');
                 break;
 
                 case 'A1':
-                    setClip('eating');
+                    setClip('sitting to work');
                     break;
 
                     case 'A11':
-                        setClip('excercesing');
+                        setClip('typing');
                         break;
                     case 'A12':
-                        setClip('exhausted');
+                        setClip('working-remote');
                         break;
 
                 case 'A2':
-                    setClip('go-sleep');
+                    setClip('spin-chair');
                     break;
 
                     case 'A21':
-                        setClip('sitting to work');
+                        setClip('work-onfire');
                         break;
                     case 'A22':
-                        setClip('thinking');
+                        setClip('work-leaving');
                         break;
 
             case 'B':
-                setClip('working-remote');
+                setClip('wakingup');
                 break;
 
                 case 'B1':
-                    setClip('typing');
+                    setClip('excercesing');
                     break;
                     
                     case 'B11':
-                        setClip('wakingup');
+                        setClip('jogging');
                         break;
                     case 'B12':
                         setClip('wakingup2');
                         break;
 
                 case 'B2':
-                    setClip('work-leaving');
+                    setClip('eating');
                     break;    
                     
                     case 'B21':
-                        setClip('work-onfire');
+                        setClip('thinking');
                         break;   
                     case 'B22':
                         setClip('tiburon');
@@ -96,12 +99,13 @@ const MainFrame = props => {
         }
     };
 
+
     return (
         <div className='Principal' onClick={() => {changeState()}} >
 
             <ClipDisplay state={history} src= {'clips/'+clip+'.gif'}  />
 
-            <div className='message' style={messageState ?  {display: ''} : {display: 'none'}}>
+            <div style={messageState ?  {display: ''} : {display: 'none'}}>
 
                 <Message state={history} onClickHandler={selectHistory} reset={restart}/>
 
