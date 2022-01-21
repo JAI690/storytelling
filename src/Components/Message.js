@@ -4,6 +4,7 @@ import StartButton from './StartButton';
 import DecisionButton from './DecisionButton';
 
 const messages = {
+    '': 'Initial state',
     'A': 'This is state A',
     'A1': 'This is state A1',
     'A12': 'This is state A11',
@@ -11,13 +12,13 @@ const messages = {
     'A2': 'This is state A2',
     'A21': 'This is state A21',
     'A22': 'This is state A22',
-    'B': 'This is stBte B',
-    'B1': 'This is stBte B1',
-    'B12': 'This is stBte B11',
-    'B12': 'This is stBte B12',
-    'B2': 'This is stBte B2',
-    'B21': 'This is stBte B21',
-    'B22': 'This is stBte B22',
+    'B': 'This is state B',
+    'B1': 'This is state B1',
+    'B12': 'This is state B11',
+    'B12': 'This is state B12',
+    'B2': 'This is state B2',
+    'B21': 'This is state B21',
+    'B22': 'This is state B22',
 }
 
 const Message = props => {
@@ -25,8 +26,8 @@ const Message = props => {
     return (
 
         <div className='textArea'>
-            
-            <h1>{props.state}</h1>
+
+            <h1>{props.state?props.state:'START'}</h1>
             <p>
             {messages[props.state]}
             </p>
