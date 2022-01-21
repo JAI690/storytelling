@@ -3,8 +3,7 @@ import '../Styles/Message.css'
 import StartButton from './StartButton';
 
 const Message = props => {
-    const [variable,setVariable] = useState();
-    
+
     return (
 
         <div className='textArea'>
@@ -12,7 +11,7 @@ const Message = props => {
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
             </p>
 
-        <StartButton />
+        <StartButton onClick={()=>{props.onClick()}}/>
         </div>
     );
      

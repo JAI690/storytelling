@@ -6,7 +6,7 @@ const StartButton = props => {
     
     return (
         <div>
-            <button className='startButton' >START</button>
+            <button className='startButton' onClick={() => props.onClick()}>START</button>
         </div>
     );
      

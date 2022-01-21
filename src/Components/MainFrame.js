@@ -5,14 +5,24 @@ import ClipDisplay from './ClipDisplay';
 
 const MainFrame = props => {
     const [messageState,setMessageState] = useState(false);
+    const [clip,setClip] = useState('perrito');
+
     const changeState = function(){
         setMessageState(!messageState);
     }
+
+    const changeClip = function(){
+        if(clip==='perrito'){
+            setClip('tiburon');
+        }else{
+            setClip('perrito')
+        }
+    }
     return (
         <div className='Principal' onClick={() => {changeState()}} >
-            <ClipDisplay src='clips/perrito.gif'  />
+            <ClipDisplay src= {'clips/'+clip+'.gif'}  />
             <div className='message' style={messageState ?  {display: ''} : {display: 'none'}}>
-                <Message />
+                <Message onClick={()=>{changeClip()}}/>
             </div>
         </div>
     );
