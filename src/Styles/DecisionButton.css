@@ -3,12 +3,13 @@
     color:thistle;
     padding: 16px 32px;
     font-size: 25px;
+    width: 300px;
     border-radius: 20px;
     margin: auto;
 }
 
 #buttonA {
-    margin-right: 7%;
+    margin-right: 9%;
     animation: decisionButtonA 2s ease-in-out forwards alternate infinite;
 }
 
