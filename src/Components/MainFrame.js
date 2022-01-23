@@ -4,6 +4,9 @@ import Message from './Message';
 import ClipDisplay from './ClipDisplay';
 import { clips } from '../Dictionary';
 
+import store from '../Redux/store';
+import * as actions from '../Redux/actions';
+
 const MainFrame = props => {
     const [messageState,setMessageState] = useState(false);
     const [history, setHistory] = useState('start')
@@ -19,7 +22,9 @@ const MainFrame = props => {
     };
 
     const transition = function(){
-            setHistory('waiting');
+        //setHistory('waiting');
+        store.dispatch(actions.takeDecision('waiting'));
+        console.log(store.getState());
     }
 
     const selectHistory = async(decision)=>{
@@ -27,9 +32,9 @@ const MainFrame = props => {
         transition();
         setTimeout(() => {
             if(decision==='start'){
-                setHistory('')
+                store.dispatch(actions.takeDecision(''));
             }else{
-                setHistory(decision);
+                store.dispatch(actions.takeDecision(decision));
             }
             setLoading(false);
         }, 1000);
