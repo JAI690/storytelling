@@ -1,15 +1,12 @@
 import React from 'react';
 import '../Styles/ClipDisplay.css'
-import store from '../Redux/store';
 import { clips } from '../Dictionary';
+import { useSelector } from 'react-redux';
 
 const ClipDisplay = props => {
-    let scene = store.getState().history;
-    
-    store.subscribe(() => {
-        scene = store.getState().history
-        console.log(scene)
-    })
+
+    const scene = useSelector((state) => state.history);
+
     
     return (
         <img className='clip' src={'clips/'+clips[scene]+'.gif'} alt="Clip not Found" /> 

@@ -3,15 +3,11 @@ import '../Styles/Message.css'
 import StartButton from './StartButton';
 import DecisionButton from './DecisionButton';
 import { messages, titles } from '../Dictionary';
-import store from '../Redux/store';
+import { useSelector } from 'react-redux';
 
 const Message = props => {
     
-    let scene = store.getState().history;
-    
-    store.subscribe(() => {
-        scene = store.getState().history
-    })
+    const scene = useSelector((state) => state.history);
 
     return (
 
@@ -24,12 +20,10 @@ const Message = props => {
                 </p>
 
             {scene==='start'?
-                <StartButton message='START' onClickHandler={props.onClickHandler}/>:
-                scene===''?
-                    <DecisionButton decisionA='A' decisionB='B' onClickHandler={props.onClickHandler}/>:
-                    scene.length<3?
-                        <DecisionButton decisionA={scene+'1'} decisionB={scene+'2'} onClickHandler={props.onClickHandler}/>:
-                        <StartButton message='RESTART' onClickHandler={props.reset}/>
+                <StartButton message='START' onClickHandler={props.selectHistory}/>:
+                scene.length<3?
+                    <DecisionButton />:
+                    <StartButton message='RESTART' onClickHandler={props.reset}/>
             }
             </div>
         </div>
