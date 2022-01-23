@@ -3,6 +3,11 @@ import * as actions from './actionTypes';
 export const takeDecision = (decision,loading) => ({
     type: actions.TAKE_DECISION,
     payload: {
-        decision
+        decision,
+        loading
     }
+});
+
+export const toggleMessage = () => ({
+    type: actions.TOGGLE_MESSAGE,
 });
