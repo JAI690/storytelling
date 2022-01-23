@@ -1,6 +1,5 @@
 import store from '../Redux/store';
 import * as actions from '../Redux/actions';
-import { useSelector } from 'react-redux';
 
 export const restart = function(){
     store.dispatch(actions.reset());
