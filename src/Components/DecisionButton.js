@@ -1,26 +1,14 @@
 import React from 'react';
 import '../Styles/DecisionButton.css'
-import store from '../Redux/store';
-import * as actions from '../Redux/actions';
 import { decisions } from '../Dictionary';
 import { useSelector } from 'react-redux';
+import * as Helpers from '../Hooks/customHook';
 
 const DecisionButton = props => {
 
     const scene = useSelector((state) => state.history);
 
-    const selectHistory = (decision)=>{
-        store.dispatch(actions.takeDecision('waiting',true));
-        setTimeout(() => {
-            if(decision==='start'){
-                store.dispatch(actions.takeDecision('',false));
-                
-            }else{
-                store.dispatch(actions.takeDecision(decision,false));
-            }
-        }, 1000);
-    };
-
+    const {selectHistory} = Helpers;
 
 
     return (

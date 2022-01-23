@@ -19,11 +19,10 @@ const Message = props => {
                 {messages[scene]}
                 </p>
 
-            {scene==='start'?
-                <StartButton message='START' onClickHandler={props.selectHistory}/>:
+            {
                 scene.length<3?
                     <DecisionButton />:
-                    <StartButton message='RESTART' onClickHandler={props.reset}/>
+                    <StartButton />
             }
             </div>
         </div>

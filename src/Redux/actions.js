@@ -9,14 +9,9 @@ export const takeDecision = (decision,loading) => ({
 });
 
 export const toggleMessage = () => ({
-    type: actions.TOGGLE_MESSAGE,
+    type: actions.TOGGLE_MESSAGE
 });
 
 export const reset = () => ({
-    type: actions.RESET,
-    payload: {
-        history: 'start',
-        isMessageDisplay: false,
-        isLoading: false
-    }
+    type: actions.RESET
 })

@@ -19,6 +19,12 @@ export default function reducer(state = initialState,action){
                 ...state,
                 isMessageDisplay: !state.isMessageDisplay
             }
+        case actions.RESET:
+            return {
+                ...state,
+                history: 'start',
+                isLoading: false
+            }
         default:
             return state
     }
