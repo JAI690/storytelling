@@ -22,7 +22,7 @@ export const titles = {
     '': 'Homer on your hands',
     '1': 'Working Homer',
     '11': 'Working Remote',
-    '111': '2oring Working',
+    '111': 'Boring Working',
     '112': 'Good Practices',
     '12': 'Working on-site',
     '121': 'Disaster',

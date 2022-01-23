@@ -1,9 +1,8 @@
 import React from 'react';
 import '../Styles/Message.css'
-import StartButton from './StartButton';
-import DecisionButton from './DecisionButton';
 import { messages, titles } from '../Dictionary';
 import { useSelector } from 'react-redux';
+import Buttons from './Buttons';
 
 const Message = props => {
     
@@ -15,15 +14,10 @@ const Message = props => {
             <div className='textArea'>
 
                 <h1>{titles[scene]}</h1>
-                <p>
-                {messages[scene]}
-                </p>
+                <p>{messages[scene]}</p>
 
-            {
-                scene.length<3?
-                    <DecisionButton />:
-                    <StartButton />
-            }
+                <Buttons />
+                
             </div>
         </div>
 
