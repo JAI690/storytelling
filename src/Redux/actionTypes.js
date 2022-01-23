@@ -1,0 +1,1 @@
+export const TAKE_DECISION = "takeDecision";
