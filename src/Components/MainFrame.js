@@ -24,7 +24,6 @@ const MainFrame = props => {
     const transition = function(){
         //setHistory('waiting');
         store.dispatch(actions.takeDecision('waiting'));
-        console.log(store.getState());
     }
 
     const selectHistory = async(decision)=>{
@@ -44,7 +43,7 @@ const MainFrame = props => {
     return (
         <div className='Principal' onClick={() => {changeState()}} >
 
-            <ClipDisplay state={history} src= {'clips/'+clips[history]+'.gif'}  />
+            <ClipDisplay />
 
             <div style={messageState ?  {display: ''} : {display: 'none'}}>
 
