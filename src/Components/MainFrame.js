@@ -1,49 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../Styles/MainFrame.css';
 import Message from './Message';
 import ClipDisplay from './ClipDisplay';
-import { clips } from '../Dictionary';
+import { useSelector } from 'react-redux';
+import * as Helpers from '../Hooks/customHook';
 
 const MainFrame = props => {
-    const [messageState,setMessageState] = useState(false);
-    const [history, setHistory] = useState('start')
-    const [loading, setLoading] = useState(false);
 
-    const restart = function(){
-        setMessageState(false);
-        setHistory('start')
-    }
-
-    const changeState = function(){
-        if(!loading)setMessageState(!messageState);
-    };
-
-    const transition = function(){
-            setHistory('waiting');
-    }
-
-    const selectHistory = async(decision)=>{
-        setLoading(true)
-        transition();
-        setTimeout(() => {
-            if(decision==='start'){
-                setHistory('')
-            }else{
-                setHistory(decision);
-            }
-            setLoading(false);
-        }, 1000);
-    };
-
+    const { isMessageDisplay, isLoading } = useSelector((state) => state);
+    
+    const {toggleMessage} = Helpers;
 
     return (
-        <div className='Principal' onClick={() => {changeState()}} >
+        <div className='Principal' onClick={() =>  toggleMessage(isLoading)} >
 
-            <ClipDisplay state={history} src= {'clips/'+clips[history]+'.gif'}  />
+            <ClipDisplay />
 
-            <div style={messageState ?  {display: ''} : {display: 'none'}}>
+            <div style={isMessageDisplay?  {display: ''} : {display: 'none'}}>
 
-                <Message state={history} onClickHandler={selectHistory} reset={restart}/>
+                <Message />
 
             </div>
         </div>
