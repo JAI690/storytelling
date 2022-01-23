@@ -1,0 +1,47 @@
+.buttonDecision {
+    background-color: black;
+    color:thistle;
+    padding: 16px 32px;
+    font-size: 25px;
+    width: 300px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+#buttonA {
+    margin-right: 9%;
+    animation: decisionButtonA 2s ease-in-out forwards alternate infinite;
+}
+
+#buttonB {
+    animation: decisionButtonB 2s ease-in-out forwards alternate infinite;
+}
+
+#buttonA:hover {
+    cursor: pointer;
+    animation-play-state: paused;
+    
+}
+
+#buttonB:hover {
+    cursor: pointer;
+    animation-play-state: paused;
+}
+
+@keyframes decisionButtonA {
+    0% {
+        transform:scale(90%)
+    }
+    100% {
+        transform: scale(120%)
+    }
+}
+
+@keyframes decisionButtonB {
+    0% {
+        transform:scale(120%)
+    }
+    100% {
+        transform: scale(90%)
+    }
+}

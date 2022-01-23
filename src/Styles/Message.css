@@ -1,0 +1,22 @@
+.textArea {
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgba(68, 66, 66, 0.75);
+    width: 83%;
+    height: 95%;
+    border-radius: 15%;
+}
