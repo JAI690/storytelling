@@ -9,45 +9,46 @@ import * as actions from '../Redux/actions';
 
 const MainFrame = props => {
     const [messageState,setMessageState] = useState(false);
-    const [history, setHistory] = useState('start')
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setisLoading] = useState(false);
 
     const restart = function(){
+        store.dispatch(actions.takeDecision('start'));
+        setisLoading(false)
         setMessageState(false);
-        setHistory('start')
     }
 
-    const changeState = function(){
-        if(!loading)setMessageState(!messageState);
+    const toggleMessage = function(){
+        if(!isLoading)setMessageState(!messageState);
     };
 
     const transition = function(){
-        //setHistory('waiting');
         store.dispatch(actions.takeDecision('waiting'));
+        setisLoading(true)
+        setMessageState(false);
     }
 
-    const selectHistory = async(decision)=>{
-        setLoading(true)
+    const selectHistory = (decision)=>{
         transition();
         setTimeout(() => {
             if(decision==='start'){
                 store.dispatch(actions.takeDecision(''));
+                
             }else{
                 store.dispatch(actions.takeDecision(decision));
             }
-            setLoading(false);
+            setisLoading(false);
         }, 1000);
     };
 
 
     return (
-        <div className='Principal' onClick={() => {changeState()}} >
+        <div className='Principal' onClick={() => {toggleMessage()}} >
 
             <ClipDisplay />
 
             <div style={messageState ?  {display: ''} : {display: 'none'}}>
 
-                <Message state={history} onClickHandler={selectHistory} reset={restart}/>
+                <Message onClickHandler={selectHistory} reset={restart}/>
 
             </div>
         </div>

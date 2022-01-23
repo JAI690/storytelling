@@ -8,6 +8,7 @@ const ClipDisplay = props => {
     
     store.subscribe(() => {
         scene = store.getState().history
+        console.log(scene)
     })
     
     return (
