@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../Styles/MainFrame.css';
 import Message from './Message';
 import ClipDisplay from './ClipDisplay';
