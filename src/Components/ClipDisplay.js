@@ -4,9 +4,14 @@ import store from '../Redux/store';
 import { clips } from '../Dictionary';
 
 const ClipDisplay = props => {
+    let scene = store.getState().history;
+    
+    store.subscribe(() => {
+        scene = store.getState().history
+    })
     
     return (
-        <img className='clip' src={'clips/'+clips[store.getState().history]+'.gif'} alt="Clip not Found" /> 
+        <img className='clip' src={'clips/'+clips[scene]+'.gif'} alt="Clip not Found" /> 
     );
      
 };
